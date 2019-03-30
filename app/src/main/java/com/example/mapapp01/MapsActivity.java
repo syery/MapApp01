@@ -44,6 +44,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
+        //マップタイプ等の検出
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.setTrafficEnabled(true);
+
         // マーカーを追加
         LatLng au = new LatLng(40.784372, 140.780566);mMap.addMarker(new MarkerOptions().position(au).title("青森大学の池"));
        mMap.addMarker(new MarkerOptions().position(new LatLng(40.833972, 140.725910)).title("もやし軍曹"));
