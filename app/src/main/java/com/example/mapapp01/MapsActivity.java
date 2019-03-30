@@ -41,12 +41,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // マーカーを追加
+        LatLng au = new LatLng(40.784372, 140.780566);mMap.addMarker(new MarkerOptions().position(au).title("青森大学の池"));
+       mMap.addMarker(new MarkerOptions().position(new LatLng(40.833972, 140.725910)).title("もやし軍曹"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(40.828090, 140.722182)).title("ジブラルタル"));
 
 
+        //拠点を移動
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(au));
+
+//       現在地を表示
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
            ActivityCompat.requestPermissions(this,new String[]{
                    Manifest.permission.ACCESS_FINE_LOCATION
