@@ -12,6 +12,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -46,6 +47,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng au = new LatLng(40.784372, 140.780566);mMap.addMarker(new MarkerOptions().position(au).title("青森大学の池"));
        mMap.addMarker(new MarkerOptions().position(new LatLng(40.833972, 140.725910)).title("もやし軍曹"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(40.828090, 140.722182)).title("ジブラルタル"));
+
+        //情報つきマーカー
+        MarkerOptions opt = new MarkerOptions();
+        opt.position(new LatLng(40.805179, 140.782655));
+        opt.title("ドラゴンカフェ");
+        opt.snippet("いいセンスな名前");
+        opt.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        Marker m1 = mMap.addMarker(opt);
+        m1.showInfoWindow();
+
 
 
         //拠点を移動 +　ズーム(2-21)
