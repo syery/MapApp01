@@ -1,3 +1,6 @@
+//題名　公園マッピング
+
+
 package com.example.mapapp01;
 
 import android.Manifest;
@@ -47,7 +50,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //マップタイプ等の検出
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mMap.setTrafficEnabled(true);
+       // mMap.setTrafficEnabled(true);
 
         // マーカーを追加
         LatLng au = new LatLng(40.784372, 140.780566);mMap.addMarker(new MarkerOptions().position(au).title("青森大学の池"));
