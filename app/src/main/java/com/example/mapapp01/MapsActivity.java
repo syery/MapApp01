@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -97,6 +98,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //                );
 //            }
 //        });
+
+
+
+      //Infowindowのタップの検出
+      mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+          @Override
+          public void onInfoWindowClick(Marker marker) {
+              Toast.makeText(MapsActivity.this,marker.getTitle()+"を押したね",Toast.LENGTH_SHORT).show();
+          }
+      });
 
 
     }
